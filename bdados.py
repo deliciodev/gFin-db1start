@@ -1,4 +1,5 @@
 import mysql.connector
+from classes import Pessoa
 
 
 def cadastrar_usuario(usuario, senha):
@@ -18,7 +19,8 @@ def cadastrar_usuario(usuario, senha):
     comando = f'INSERT INTO tb_usuarios (nome, senha) VALUES ("{nome}", {senha})'
     cursor.execute(comando)
     conexao.commit()
-    print("Usuário Cadastrado com sucesso!")
+    print("\nUsuário Cadastrado com sucesso!")
+    print("Agora você pode ENTRAR!")
 
 
     cursor.close()
@@ -35,6 +37,7 @@ def validar_usuario(usuario, senha):
 
       cursor = conexao.cursor()
 
+      idUsuario = None
       nome = usuario
       senha = senha
       #Read
@@ -43,28 +46,12 @@ def validar_usuario(usuario, senha):
       resultado = cursor.fetchone() #ler bd
 
       if resultado:
-           idUsuario = resultado[0]
-           print(f'Login válido. id: {idUsuario}')
+          idUsuario = resultado[0]
+          print(f'\nLogin válidado!\n')
+          cursor.close()
+          conexao.close()
+      
       else:
-           print('Credenciais invalidas')
+           print('\nCredenciais invalidas, Tente novamente\n')
 
-    
-      cursor.close()
-      conexao.close()
-      return idUsuario
-
-
-#Update
-#comando = f'UPDATE tb_usuarios SET senha = {senha} WHERE nome = "{nome}"'
-#cursor.execute(comando)
-#conexao.commit() # edita o bd
-
-
-#Delete
-#comando = f'DELETE FROM tb_usuarios WHERE nome = "{nome}"'
-#cursor.execute(comando)
-#conexao.commit() # exclui o dado da tabela
-
-
-#cursor.close()
-#conexao.close()
+      return Pessoa(idUsuario, nome, senha)
