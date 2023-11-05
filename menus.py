@@ -1,13 +1,28 @@
-# implementar condicao para sair do app
-def cabecalho():
-    return print('\nPara sair a qualquer momento pressione a letra: Q')
+import getpass
 
-def menu_criar_login():
-    usuario = input("""\nDIGITE UM NOME DE USUARIO: """).upper
-    senha = input("""\nDIGITE UM NOME DE SENHA: """).upper
+def menu_inicio():
+    op = input("""\n------BEM VINDO-------\n 
+        \rE - ENTRAR
+        \rC - CRIAR CONTA
+        \rS - SAIR
+        \r\nDigite uma opção: """).upper()
+    return op
+
+def menu_entrar():
+    print('\n------ENTRAR------')
+    usuario = input("""\nDIGITE: NOME DE USUARIO: """).upper
+    senha = getpass.getpass("""DIGITE: SENHA: """)
     return (usuario, senha)
-    
+
+def menu_criar():
+    print('\n------CADASTRO------')
+    usuario = input('\nDIGITE UM NOME DE USUARIO: ').upper()
+    senha = getpass.getpass('DIGITE UMA SENHA COM 4 DIGITOS: ')
+    return (usuario, senha)
+
+
 def menu_usuario():
+    print('\n------gFin------')
     op = input("""\n 
         \rA - ADICIONAR
         \rE - EDITAR/EXCLUIR
@@ -18,19 +33,27 @@ def menu_usuario():
 
 
 def menu_adicionar():
-    op = input("""\n\rE - CADASTRAR ENTRADAS
-                  \rS - CADASTRAR SAIDAS 
-                  \n\rDigite uma letra: """).upper()
+    op = input("""\n------gFin-------\n 
+        \rE - CADASTRAR ENTRADAS
+        \rC - CADASTRAR SAIDAS
+        \rS - SAIR
+        \r\nDigite uma opção: """).upper()
     return op
 
 def menu_editar():
-    # imprimir lista para usuario escolher onde alterar
-    op = input("""\n\rDigite o ID: """).upper()
+    op = input("""\n------gFin-------\n 
+        \rL - ALTERAR ENTRADAS
+        \rC - ALTERAR SAIDAS
+        \rC - EXCLUIR
+        \rS - SAIR
+        \r\nDigite uma opção: """).upper()
     return op
 
+
 def menu_consultar():
-    # imprimir lista para usuario escolher onde alterar
-    op = input("""\n\rZ - Extrato por dia
-                  \rW - Extrato completo
-                  \n\rDigite uma letra: """).upper()
+    op = input("""\n------gFin-------\n 
+        \rL - LISTAR ENTRADAS
+        \rC - LISTAR SAIDAS
+        \rS - SAIR
+        \r\nDigite uma opção: """).upper()
     return op

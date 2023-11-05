@@ -1,8 +1,11 @@
 # criar ou buscar um id Pessoa
 def login_usuario():
     usuario = input("""\USUARIO: """).upper()
-    senha = input("""SENHA: """).upper()
+    senha = input("""SENHA: """)
 
+    return (usuario, senha)
+
+# validar login, comparando com info do bd
 def validar_login():
     pass
 

@@ -1,7 +1,19 @@
+import mysql.connector
+from menus import menu_inicio, menu_entrar, menu_criar, menu_usuario
+from getpass import getpass
 from datetime import datetime
 import json
 
 
-from menus import menu_login
+opt = ''
 
-menu_login()
+while opt != 'S':
+    opt = menu_inicio()
+    
+    if opt == 'E':
+        menu_entrar()
+    
+    elif opt == 'C':
+        menu_criar()
+    else: 
+        print('Volte Sempre!')
