@@ -29,6 +29,7 @@ class Pessoa:
         cursor.close()
         conexao.close()
 
+
     def adicionar_dados(self):
         # Conectar com banco de dados
         conexao = mysql.connector.connect(
@@ -72,7 +73,3 @@ class Pessoa:
         print('\n------dados apagados!------\n')
         cursor.close()
         conexao.close()
-        
-
-    def deslogar(self):
-        return 's'
