@@ -1,6 +1,6 @@
-#Visão Geral do Projeto
+Visão Geral do Projeto
 
-##Prósito do software
+Prósito do software
 O gFin-db1start é uma aplicação de gerenciamento de tarefas desenvolvida para simplificar a organização e o acompanhamento financeiro pessoal. Ele foi projetado para atender às necessidades de pessoas que desejam manter o controle de suas entradas e saidas de forma fácil e eficiente.
 
 Este software permite aos usuários:
